@@ -16,7 +16,7 @@ st.set_page_config(page_title="당뇨 예측 프로그램", page_icon="🩺", la
 def load_models():
     # 같은 폴더에 있는 모델과 스케일러 파일을 읽어옵니다.
     # 파일명이 다르거나 경로가 다르면 이 부분을 수정해 주세요.
-    model = joblib.load("rf_model_eng.pkl") 
+    model = joblib.load("diabetes.pkl") 
     scaler_obj = joblib.load("scaler.pkl")
     return model, scaler_obj
 
@@ -24,7 +24,7 @@ try:
     rf_model_eng, scaler = load_models()
     model_loaded = True
 except FileNotFoundError:
-    st.error("🚨 `rf_model_eng.pkl` 또는 `scaler.pkl` 파일을 찾을 수 없습니다. 모델 파일을 `app.py`와 같은 폴더에 넣어주세요.")
+    st.error("🚨 `diabetes.pkl` 또는 `scaler.pkl` 파일을 찾을 수 없습니다. 모델 파일을 `app.py`와 같은 폴더에 넣어주세요.")
     model_loaded = False
 
 
